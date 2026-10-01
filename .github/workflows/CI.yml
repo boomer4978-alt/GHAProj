@@ -1,0 +1,17 @@
+name: My First Workflow
+
+on: 
+  workflow_dispatch
+
+jobs:
+    first-job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Greet Hello Message
+              run: echo "Hello, First Workflow Successfully Triggered"
+            - name: Running multiple commands
+              run: |
+                echo "this is first command in nested command"
+                echo "this is second command in nested command"
+            - name: Display Message
+              run: echo " Successfully Completed My First Workflow"
