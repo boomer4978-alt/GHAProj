@@ -1,0 +1,34 @@
+name: Deploying to Production Workflow
+
+on:
+    workflow_dispatch
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout Code
+              uses: actions/checkout@v3
+            - name: Greet Hello Message
+              run: echo "Hello, Deploying to Production Workflow Successfully Triggered"
+            - name: Running multiple commands
+              run: |
+                echo "this is first one going into production"
+                echo "this is second one going into production"
+    
+    deploy:
+        needs: build
+        runs-on: ubuntu-latest
+        env:
+            ENVIRONMENT: production
+        steps:
+            - name: Checkout Code
+              uses: actions/checkout@v3
+            - name: Greet Hello Message
+              run: echo "Hello, Deploying to Production Workflow Successfully Triggered"
+            - name: Running multiple commands
+              run: |
+                echo "this is third one going into production"
+                echo "this is fourth one going into production"
+            - name: Display Message
+              run: echo " Successfully Completed Deploying to Production Workflow"
