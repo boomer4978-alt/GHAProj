@@ -1,7 +1,7 @@
 name: Dev to Prod Deployment
 
 on:
-  workflow_dispatch:
+  workflow_dispatch
 
 jobs:
 
