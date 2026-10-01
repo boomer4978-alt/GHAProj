@@ -1,0 +1,21 @@
+name: Pulling Workflow
+
+on:
+    pull-request:
+        branches:
+            - main
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout Code
+              uses: actions/checkout@v3
+            - name: Greet Hello Message
+              run: echo "Hello, Pulling Workflow Successfully Triggered"
+            - name: Running multiple commands
+              run: |
+                echo "this is fifth command in nested command"
+                echo "this is sixth command in nested command"
+            - name: Display Message
+              run: echo " Successfully Completed Pulling Workflow"
