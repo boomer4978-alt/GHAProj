@@ -1,0 +1,21 @@
+name: Pushing Workflow
+
+on:
+  push:
+    branches:
+        - main
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout Code
+              uses: actions/checkout@v3
+            - name: Greet Hello Message
+              run: echo "Hello, Pushing Workflow Successfully Triggered"
+            - name: Running multiple commands
+              run: |
+                echo "this is third command in nested command"
+                echo "this is fourth command in nested command"
+            - name: Display Message
+              run: echo " Successfully Completed Pushing Workflow"
